@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"/>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Anasayfa</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="./img/logo.png" alt="logo" width="50" height="50">
+            <h4 class="logo">Sepetim.com</h4>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="opportunities.html">Fırsatlar</a></li>
+                <li><a class="nav-link" href="products.html">Ürünler</a></li>
+                <li><a class="nav-link" href="contact.html">İletişim</a></li>
+            </ul>
+        </nav>
+        <div class="cart">
+            <img src="./img/cart.svg" alt="cart" width="50" height="35">
+        </div>
+    </header>
+    <main>
+        <section class="presentation">
+            <div class="introduction">
+                <div class="intro-text">
+                    <h1>Geleceğin Bilgisayarı</h1>
+                    <p>Yeni 4k ekranı ile kendine özel renk paleti ile ve dokunmatik özelliği ile diğer laptoplardan oldukça farklı
+                    </p>
+                </div>
+                <div class="cta">
+                    <button class="cta-select">14 İnç</button>
+                    <button class="cta-add">Sepete Ekle</button>
+                </div>
+            </div>
+            <div class="cover">
+                <img class="slayt" src="./img/macbook.png" alt="macbook">
+                <img class="slayt" src="./img/laptop.png" alt="macbook">
+                <img class="slayt" src="./img/ultrabook.png" alt="macbook">
+            </div>
+            
+        </section>
+
+            <div class="laptop-select">
+                <a href="javascript:oncekiSlayt()"><img src="./img/left-arrow.svg" alt="" width="50" height="30"></a>
+                <img class="dot active" src="./img/dot-null.png" alt="" width="50" height="50">
+                <img class="dot" src="./img/dot.png" alt="" width="50" height="50">
+                <img class="dot" src="./img/dot.png" alt="" width="50" height="50">
+                <a href="javascript:sonrakiSlayt()"><img src="./img/right-arrow.svg" alt="" width="50" height="30">
+            </div>
+            <script>
+                "use strict";
+  var _slayt = document.getElementsByClassName("slayt");
+  var slaytSayisi = _slayt.length;
+  var slaytNo = 0;
+  var i = 0;
+
+  slaytGoster(slaytNo);
+
+  function sonrakiSlayt() {
+    slaytNo++;
+    slaytGoster(slaytNo);
+  }
+
+  function oncekiSlayt() {
+    slaytNo--;
+    slaytGoster(slaytNo);
+  }
+
+  function slaytGoster(slaytNumarasi) {
+    slaytNo = slaytNumarasi;
+
+    if (slaytNumarasi >= slaytSayisi) slaytNo = 0;
+
+    if (slaytNumarasi < 0) slaytNo = slaytSayisi - 1;
+
+    for (i = 0; i < slaytSayisi; i++) {
+      _slayt[i].style.display = "none";
+    }
+
+    _slayt[slaytNo].style.display = "block";
+
+  }
+
+
+            </script>
+
+            <img class="big-circle" src="./img/big-eclipse.svg" alt="">
+            <img class="medium-circle" src="./img/mid-eclipse.svg" alt="">
+            <img class="small-circle" src="./img/small-eclipse.svg" alt="">
+
+    </main>
+</body>
+</html>
